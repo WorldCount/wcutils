@@ -39,3 +39,10 @@ class WCTimer(object):
 
         if self.verbose:
             print("Затраченное время: %.7s сек.\n" % self.secs)
+
+    def format_time(self):
+        h = self.secs // 3600
+        m = (self.secs // 60) % 60
+        s = self.secs % 60
+        result = 'Затраченное время: {0:02}:{1:02}:{2:02}'.format(int(h), int(m), int(s))
+        return result
